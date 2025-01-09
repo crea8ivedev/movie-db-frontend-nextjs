@@ -28,7 +28,8 @@ export default function Movies() {
   async function fetchMovies() {
     const { data: movies } = await axios.get(`/api/movies`);
     setIsLoading(false);
-    setMovies(movies.data);
+
+    setMovies(movies);
   }
 
   useEffect(() => {
@@ -46,7 +47,7 @@ export default function Movies() {
           <h1 className="text-4xl text-white font-semibold leading-none">
             {t("viewMovie.heading")}
           </h1>
-          <Link to="/movies/create" className="text-gray-200">
+          <Link href="/movies/create" className="text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"

@@ -6,8 +6,6 @@ import ImageUpload from "./ImageUpload";
 import Input from "./Input";
 import Button from "./Button";
 
-import { useRouter } from "next/navigation";
-
 import axios from "@/utils/axios";
 import { useTranslation } from "react-i18next";
 
@@ -23,7 +21,7 @@ const defaultFormValue = {
   poster: "",
 };
 
-export default function MovieForm({ value, isEdit = false }) {
+export default function MovieForm({id, value, isEdit = false }) {
   const {
     register,
     handleSubmit,
@@ -36,8 +34,8 @@ export default function MovieForm({ value, isEdit = false }) {
     },
   });
 
-  const router = useRouter();
-  const { id } = router.query;
+
+  
 
   const { t } = useTranslation();
 

@@ -10,11 +10,8 @@ import { useRouter } from "next/navigation";
 export default function Login() {
   const setIsLogin = useAuth((state) => state.setIsLogin);
   const isLogin = useAuth((state) => state.isLogin);
-
   const router = useRouter();
-
   const { t } = useTranslation();
-  console.log("Login", isLogin);
 
   const {
     register,
@@ -30,7 +27,7 @@ export default function Login() {
       router.push("/movies");
     } catch (error) {
       setError("email", {
-        message: error.response.data.message,
+        message: error?.response?.data?.message,
       });
     }
   }

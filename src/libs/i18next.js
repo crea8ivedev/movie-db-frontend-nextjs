@@ -5,21 +5,21 @@ import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 
 i18n
-  .use(Backend) // Load translations from the backend
-  .use(LanguageDetector) // Detect user's language
-  .use(initReactI18next) // Connect with React
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next)
   .init({
-    fallbackLng: "en", // Default language
-    supportedLngs: ["en", "es", "fr"], // Add supported languages
+    fallbackLng: "en",
+    supportedLngs: ["en", "es"],
     backend: {
-      loadPath: "/locales/{{lng}}/translation.json", // Path to translation files
+      loadPath: "/locales/{{lng}}/translation.json",
     },
     detection: {
       order: ["querystring", "cookie", "localStorage", "navigator"],
       caches: ["localStorage", "cookie"],
     },
     interpolation: {
-      escapeValue: false, // React already escapes values
+      escapeValue: false,
     },
   });
 
