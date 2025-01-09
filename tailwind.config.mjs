@@ -8,10 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "var(--primary)",
+        "primary-light": "var(--primary-light)",
+        "primary-darker": "var(--primary-darker)",
+        secondary: "var(--secondary)",
       },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

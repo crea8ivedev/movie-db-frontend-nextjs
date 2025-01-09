@@ -1,0 +1,63 @@
+{
+  "login": {
+    "heading": "Iniciar Sesión",
+    "placeholder": {
+      "email": "Correo Electrónico",
+      "password": "Contraseña"
+    },
+    "error": {
+      "requires": {
+        "email": "El correo electrónico es obligatorio",
+        "password": "La contraseña es obligatoria"
+      },
+      "validation": {
+        "email": "Por favor, introduce una dirección de correo electrónico válida",
+        "password": "La contraseña debe tener al menos 6 caracteres"
+      }
+    },
+    "check": "Recuérdame",
+    "button": "Acceder"
+  },
+
+  "viewMovie": {
+    "heading": "Mis Películas",
+    "button": {
+      "logout": "Cerrar Sesión"
+    },
+    "tooltip": {
+      "addMovie": "Añadir Nueva Película"
+    }
+  },
+  "addMovie": {
+    "heading": "Crear una nueva película",
+    "placeholder": {
+      "file": "Haz clic para subir o arrastra y suelta",
+      "title": "Título",
+      "publish": "Año de publicación"
+    },
+    "button": {
+      "cancel": "Cancelar",
+      "submit": "Enviar"
+    },
+    "error": {
+      "requires": {
+        "title": "El título es obligatorio",
+        "publish": "El año de publicación es obligatorio",
+        "poster": "Se requiere póster"
+      },
+      "validation": {
+        "title": "El título debe tener al menos 3 caracteres",
+        "publish": "Por favor, introduce un año de publicación válido",
+        "posterSize": "El tamaño del archivo no debe exceder los 2MB",
+        "posterFormat": "Solo se permiten imágenes en formato PNG, JPG y JPEG"
+      }
+    }
+  },
+  "editMovie": {
+    "heading": "Editar película"
+  },
+  "emptyState": {
+    "heading": "Tu lista de películas está vacía",
+    "addMovie": "Agregar una nueva película"
+  }
+}
