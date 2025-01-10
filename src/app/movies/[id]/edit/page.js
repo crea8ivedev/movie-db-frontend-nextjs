@@ -25,3 +25,5 @@ export default function EditMovie() {
 
   return <MovieForm id={id} value={movie} isEdit />;
 }
+
+export const dynamic = 'force-dynamic'

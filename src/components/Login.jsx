@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import Button from "@/components/Button";
 import Input from "@/components/Input";
@@ -7,13 +7,12 @@ import useAuth from "@/hooks/useAuth.js";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function Login() {
   const setIsLogin = useAuth((state) => state.setIsLogin);
   const isLogin = useAuth((state) => state.isLogin);
-
   const router = useRouter();
-
   const { t } = useTranslation();
 
   const {
@@ -30,20 +29,20 @@ export default function Login() {
       router.push("/movies");
     } catch (error) {
       setError("email", {
-        message: error.response.data.message,
+        message: error?.response?.data?.message,
       });
     }
   }
 
-  if (isLogin) {
-    return router.push("/movies");
-  }
+  useEffect(() => {
+    if (!!isLogin) return router.push("/movies");
+  }, [isLogin]);
 
   return (
     <div className="grid place-content-center h-[calc(100%_-_62px)]">
       <div className="w-80">
-        <h1 className="text-white font-semibold text-[45px] text-center mb-7" suppressHydrationWarning>
-          {t("login.heading")}
+        <h1 className="text-white font-semibold text-[45px] text-center mb-7">
+          {t("login.heading", "Sign In")}
         </h1>
         <form
           className="space-y-6 flex flex-col"
@@ -53,7 +52,7 @@ export default function Login() {
           <div>
             <Input
               type="text"
-              placeholder={t("login.placeholder.email")}
+              placeholder={t("login.placeholder.email", "Email")}
               className="w-full"
               {...register("email", {
                 required: "login.error.requires.email",
@@ -72,7 +71,7 @@ export default function Login() {
           <div>
             <Input
               type="password"
-              placeholder={t("login.placeholder.password")}
+              placeholder={t("login.placeholder.password", "Password")}
               className="w-full"
               {...register("password", {
                 required: "login.error.requires.password",
@@ -95,11 +94,11 @@ export default function Login() {
                 className="checked:bg-primary focus:checked:bg-primary active:bg-primary focus:active:bg-primary focus:outline-none focus:ring-offset-0 cursor-pointer"
                 {...register("rememberMe")}
               />
-              <span>{t("login.check")}</span>
+              <span>{t("login.check", "Remember Me")}</span>
             </label>
           </div>
           <Button type="submit" className="w-full block">
-            {t("login.button")}
+            {t("login.button", "Login")}
           </Button>
         </form>
       </div>

@@ -89,3 +89,5 @@ export default function Movies() {
     </div>
   );
 }
+
+export const dynamic = 'force-dynamic'
