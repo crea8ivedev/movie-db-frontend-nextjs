@@ -1,4 +1,5 @@
 "use client";
+
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import axios from "@/utils/axios.js";
@@ -10,7 +11,9 @@ import { useRouter } from "next/navigation";
 export default function Login() {
   const setIsLogin = useAuth((state) => state.setIsLogin);
   const isLogin = useAuth((state) => state.isLogin);
+
   const router = useRouter();
+
   const { t } = useTranslation();
 
   const {
@@ -27,7 +30,7 @@ export default function Login() {
       router.push("/movies");
     } catch (error) {
       setError("email", {
-        message: error?.response?.data?.message,
+        message: error.response.data.message,
       });
     }
   }
@@ -39,7 +42,7 @@ export default function Login() {
   return (
     <div className="grid place-content-center h-[calc(100%_-_62px)]">
       <div className="w-80">
-        <h1 className="text-white font-semibold text-[45px] text-center mb-7">
+        <h1 className="text-white font-semibold text-[45px] text-center mb-7" suppressHydrationWarning>
           {t("login.heading")}
         </h1>
         <form

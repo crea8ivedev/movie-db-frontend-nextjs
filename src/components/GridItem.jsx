@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,7 +9,9 @@ export default function GridItem({ movie }) {
       href={`/movies/${movie._id}/edit`}
     >
       <div className="w-full aspect-[9/14] mb-3">
-        <img
+        <Image
+          width={300}
+          height={400}
           src={movie.poster}
           alt={movie.title}
           className="rounded-lg object-cover h-full "

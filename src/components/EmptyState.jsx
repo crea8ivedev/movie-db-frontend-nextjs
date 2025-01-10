@@ -2,7 +2,7 @@ import React from "react";
 import Button from '@/components/Button'
 
 import { useTranslation } from "react-i18next";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 export default function EmptyState() {
   const router = useRouter();

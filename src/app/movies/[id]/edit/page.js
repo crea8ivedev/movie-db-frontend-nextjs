@@ -1,10 +1,10 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import MovieForm from "@/components/MovieForm";
 import axios from "@/utils/axios";
 import Loading from "@/components/Loading";
-import { useParams, useRouter, useSearchParams } from "next/navigation";
-import Login from "@/components/Login";
+import { useParams } from "next/navigation";
 
 export default function EditMovie() {
   const [movie, setMovie] = useState(null);
@@ -19,7 +19,7 @@ export default function EditMovie() {
   useEffect(() => {
     fetchMovie();
   }, []);
-  const {id} = useParams();
+  const { id } = useParams();
 
   if (isLoading) return <Loading />;
 

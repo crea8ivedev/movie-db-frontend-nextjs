@@ -1,7 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "https://31.220.51.146:3004";
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 axios.defaults.withCredentials = true;
 
 axios.interceptors.response.use(

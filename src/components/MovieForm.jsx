@@ -1,13 +1,14 @@
 "use client";
+
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
 import ImageUpload from "./ImageUpload";
 import Input from "./Input";
 import Button from "./Button";
-
 import axios from "@/utils/axios";
 import { useTranslation } from "react-i18next";
+import { useRouter } from "next/navigation";
 
 const currentYear = new Date().getFullYear();
 const yearOptions = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => {
@@ -15,13 +16,7 @@ const yearOptions = Array.from({ length: currentYear - 1900 + 1 }, (_, i) => {
   return { value: year, label: year.toString() };
 }).reverse();
 
-const defaultFormValue = {
-  title: "",
-  year: "",
-  poster: "",
-};
-
-export default function MovieForm({id, value, isEdit = false }) {
+export default function MovieForm({ id, value, isEdit = false }) {
   const {
     register,
     handleSubmit,
@@ -34,10 +29,8 @@ export default function MovieForm({id, value, isEdit = false }) {
     },
   });
 
-
-  
-
   const { t } = useTranslation();
+  const router = useRouter();
 
   async function onSubmit(data) {
     const formData = new FormData();

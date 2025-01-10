@@ -4,7 +4,7 @@ export default function Loading() {
   return (
     <div
       role="status"
-      className="flex justify-center items-center space-x-2 h-screen"
+      className="flex justify-center items-center space-x-2 h-[calc(100vh-64px)] "
     >
       <svg
         aria-hidden="true"
